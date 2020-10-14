@@ -35,9 +35,9 @@ Other interesting topics:
 
 * [**iden3**](https://www.iden3.io/) - Open-source ZKP-based identity management platform. Developing Circom, Zkrollup, and TrustCommunity
 
-* **Circom** - Programming language for building circuits and compiling them to Rank-1 Constraint form, for use in zero-knowledge proofs
+* [**Circom**](https://github.com/iden3/circom/) - Programming language for building circuits and compiling them to Rank-1 Constraint form, for use in zero-knowledge proofs
 
-* **snarkjs** - Javascript Web Assembly implementation of zkSNARK schemes. Generates ZKP from Circom output.
+* [**snarkjs**](https://github.com/iden3/snarkjs) - Javascript Web Assembly implementation of zkSNARK schemes. Generates ZKP from Circom output.
 
 * **Powers of Tau ceremony** - 2017 process [used by ZCash for multiparty key generation](https://www.zfnd.org/blog/powers-of-tau/), improving on the limitations of the prior Zcash Sprout release. ZCash employs ZKP natively and therefore relies on secure key generation at the outset.
 
@@ -45,7 +45,7 @@ Other interesting topics:
 
 * **Verifier smart contract** - verifies the ZKP on-chain
 
-* **Remix** - testnet for on-chain verification 
+* [**Remix**](https://remix.ethereum.org/) - testnet for on-chain verification 
 
 ## Node.js setup
 
