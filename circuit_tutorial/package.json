@@ -1,0 +1,11 @@
+{
+  "name": "circuit_tutorial",
+  "version": "1.0.0",
+  "description": "The purpose of this tutorial is to provide a guide that works with circom and snarkjs as they are currently implemented as of October 2020. I find many tutorials online are out-of-date with changes made in the last several months. Or else, I find existing tutorials have great coverage on one aspect of ZK proof generation but poor coverage of others. This tutorial strives to give equally poor coverage of all areas.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
