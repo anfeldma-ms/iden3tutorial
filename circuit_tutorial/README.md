@@ -31,6 +31,22 @@ Other interesting topics:
 * [Move toward off-chain models](https://medium.com/@miguelmota/evolution-of-blockchain-components-to-off-chain-models-ca3649fe2c83)
 * [Hermez whitepaper on zkrollups](https://hermez.io/hermez-whitepaper.pdf)
 
+## Background
+
+* [**iden3**](https://www.iden3.io/) - Open-source ZKP-based identity management platform. Developing Circom, Zkrollup, and TrustCommunity
+
+* **Circom** - Programming language for building circuits and compiling them to Rank-1 Constraint form, for use in zero-knowledge proofs
+
+* **snarkjs** - Javascript Web Assembly implementation of zkSNARK schemes. Generates ZKP from Circom output.
+
+* **Powers of Tau ceremony** - 2017 process [used by ZCash for multiparty key generation](https://www.zfnd.org/blog/powers-of-tau/), improving on the limitations of the prior Zcash Sprout release. ZCash employs ZKP natively and therefore relies on secure key generation at the outset.
+
+* **Verifier key** - public verification key embedded in the Verifier smart contract.
+
+* **Verifier smart contract** - verifies the ZKP on-chain
+
+* **Remix** - testnet for on-chain verification 
+
 ## Node.js setup
 
 Despite what the tutorials currently say it appears Circom and snarkjs are upgraded to use features only available in the latest Node.js. I recommend you install the [latest current build](https://nodejs.org/en/download/current/) (v14 at time of writing) so that you can run this tutorial.
