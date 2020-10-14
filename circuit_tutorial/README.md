@@ -1,8 +1,20 @@
 # End-to-end circuit tutorial: From Powers-of-Tau Ceremony to Proof Verification in Remix
 
-The purpose of this tutorial is to provide a guide that works with circom and snarkjs as they are currently implemented as of October 2020. I find many tutorials online are out-of-date with changes made in the last several months. Or else, I find existing tutorials have great coverage on one aspect of ZK proof generation but poor coverage of others. This tutorial strives to give equally poor coverage of all areas.
+**By the end of this tutorial, you will run a zero-knowledge proof verifier on the blockchain!**
+
+The purpose of this tutorial is to provide a guide that works with circom and snarkjs as they are currently implemented as of October 2020. I find many tutorials online are out-of-date with changes made in the last several months. Or else, I find existing tutorials have great coverage on one aspect of ZK proof generation but poor coverage of others. This tutorial strives to give coverage of all areas.
 
 This tutorial is intended to be performed in the `iden3tutorial/circuit_tutorial` directory
+
+Here are the basic steps:
+1. Setup Node.js
+2. Setup & test Circom and snarkjs
+3. Write a "hello world" circuit and an input file
+4. Compile the circuit and generate a witness
+5. Phase 1 Powers of Tau key-generation (circuit-independent)
+6. Phase 2 Powers of Tau key-generation (generate the circuit-specific verification key)
+7. Verify the proof locally
+8. **Verify the proof on-chain with Remix**
 
 References:
 1. [iden3 blog "Create your first zero-knowledge snark circuit using circom and snarkjs"](https://blog.iden3.io/first-zk-proof.html)
@@ -232,7 +244,7 @@ snarkjs zkey export solidityverifier circuit_final.zkey verifier.sol
 
 This exports a Solidity smart contract, `verifier.sol`, which you we will subsequently publish to the testchain.
 
-Open `verifier.sol' and look toward the end of the file; you will see the `Verifier` smart contract
+Open `verifier.sol` and look toward the end of the file; you will see the `Verifier` smart contract
 
 ```
 contract Verifier {
