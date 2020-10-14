@@ -1,2 +1,6 @@
 # iden3tutorial
-Tutorial content for iden3 tools
+
+This repo aggregates tutorials for working with zkSNARKS using the iden3 tools such such as Circom
+
+## Tutorials
+* [Circuit tutorial with Circom and snarkjs](./circuit_tutorial/README.md)
