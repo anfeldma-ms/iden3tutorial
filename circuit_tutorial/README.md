@@ -1,5 +1,11 @@
 # End-to-end circuit tutorial: From Powers-of-Tau Ceremony to Proof Verification in Remix
 
+To clone this repo:
+
+```
+git clone https://github.com/abf149/iden3tutorial.git
+```
+
 **By the end of this tutorial, you will run a zero-knowledge proof verifier on the blockchain!**
 
 The purpose of this tutorial is to provide a guide that works with circom and snarkjs as they are currently implemented as of October 2020. I find many tutorials online are out-of-date with changes made in the last several months. Or else, I find existing tutorials have great coverage on one aspect of ZK proof generation but poor coverage of others. This tutorial strives to give coverage of all areas.
