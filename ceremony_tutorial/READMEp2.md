@@ -6,7 +6,7 @@ This guide is pulled directly from the [snarksjs README](https://github.com/iden
 
 ### 1. Generate the reference `zkey` without phase 2 contributions
 ```sh
-snarkjs zkey new circuit.r1cs pot12_final.ptau circuit_0000.zkey
+npx snarkjs zkey new circuit.r1cs pot12_final.ptau circuit_0000.zkey
 ```
 
 The `zkey new` command creates an initial `zkey` file with zero contributions.
