@@ -6,7 +6,7 @@ This guide is pulled directly from the [snarksjs README](https://github.com/iden
 
 ### 1. Start a new powers of tau ceremony
 ```sh
-snarkjs powersoftau new bn128 12 pot12_0000.ptau -v
+npx snarkjs powersoftau new bn128 12 pot12_0000.ptau -v
 ```
 
 The `new` command is used to start a powers of tau ceremony.
@@ -18,7 +18,7 @@ The second parameter, in this case `12`, is the power of two of the maximum numb
 
 ### 2. Contribute to the ceremony
 ```sh
-snarkjs powersoftau contribute pot12_0000.ptau pot12_0001.ptau --name="First contribution" -v
+npx snarkjs powersoftau contribute pot12_0000.ptau pot12_0001.ptau --name="First contribution" -v
 ```
 
 The `contribute` command creates a ptau file with a new contribution.
@@ -31,16 +31,16 @@ You'll be prompted to enter some random text to provide an extra source of entro
 
 ### 3. Provide a second contribution
 ```sh
-snarkjs powersoftau contribute pot12_0001.ptau pot12_0002.ptau --name="Second contribution" -v -e="some random text"
+npx snarkjs powersoftau contribute pot12_0001.ptau pot12_0002.ptau --name="Second contribution" -v -e="some random text"
 ```
 
 By letting you write the random text as part of the command, the `-e` parameter allows `contribute` to be non-interactive.
 
 ### 4. Provide a third contribution using third party software
 ```sh
-snarkjs powersoftau export challenge pot12_0002.ptau challenge_0003
-snarkjs powersoftau challenge contribute bn128 challenge_0003 response_0003 -e="some random text"
-snarkjs powersoftau import response pot12_0002.ptau response_0003 pot12_0003.ptau -n="Third contribution name"
+npx snarkjs powersoftau export challenge pot12_0002.ptau challenge_0003
+npx snarkjs powersoftau challenge contribute bn128 challenge_0003 response_0003 -e="some random text"
+npx snarkjs powersoftau import response pot12_0002.ptau response_0003 pot12_0003.ptau -n="Third contribution name"
 ```
 
 The challenge and response files are compatible with [this software](https://github.com/kobigurk/phase2-bn254).
@@ -49,7 +49,7 @@ This allows you to use different types of software in a single ceremony.
 
 ### 5. Verify the protocol so far
 ```sh
-snarkjs powersoftau verify pot12_0003.ptau
+npx snarkjs powersoftau verify pot12_0003.ptau
 ```
 
 The `verify` command verifies a `ptau` (powers of tau) file. Which means it checks all the contributions to the multi-party computation (MPC) up to that point. It also prints the hashes of all the intermediate results to the console.
@@ -65,7 +65,7 @@ In sum, whenever a new zk-snark project needs to perform a trusted setup, you ca
 
 ### 6. Apply a random beacon
 ```sh
-snarkjs powersoftau beacon pot12_0003.ptau pot12_beacon.ptau 0102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f 10 -n="Final Beacon"
+npx snarkjs powersoftau beacon pot12_0003.ptau pot12_beacon.ptau 0102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f 10 -n="Final Beacon"
 ```
 
 The `beacon` command creates a `ptau` file with a contribution applied in the form of a random beacon.
@@ -80,7 +80,7 @@ For the purposes of this tutorial, the beacon is essentially a delayed hash func
 
 ### 7. Prepare phase 2
 ```sh
-snarkjs powersoftau prepare phase2 pot12_beacon.ptau pot12_final.ptau -v
+npx snarkjs powersoftau prepare phase2 pot12_beacon.ptau pot12_final.ptau -v
 ```
 
 We're now ready to prepare phase 2 of the setup (the circuit-specific phase).
@@ -112,7 +112,7 @@ https://www.reddit.com/r/ethereum/comments/iftos6/powers_of_tau_selection_for_he
 
 ### 8. Verify the final `ptau`
 ```sh
-snarkjs powersoftau verify pot12_final.ptau
+npx snarkjs powersoftau verify pot12_final.ptau
 ```
 
 The `verify` command verifies a powers of tau file.
