@@ -130,9 +130,9 @@ Note: When compiling a circuit, a component named `main` must always exist.
 Here is the process to compile the circuit, which deviates slightly from what is shown in the [iden3 github tutorial](https://github.com/iden3/circom/blob/master/TUTORIAL.md):
 
 ```
-circom circuit.circom --r1cs
-circom circuit.circom ---wasm
-circom circuit.circom --sym
+npx circom circuit.circom --r1cs
+npx circom circuit.circom ---wasm
+npx circom circuit.circom --sym
 ```
 
 > I find I have problems running circom with `--r1cs`, `--wasm`, and `--sym` flags altogether in one call.
