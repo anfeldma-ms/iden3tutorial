@@ -156,7 +156,7 @@ Which are the inputs a = 3 and b = 11.
 ### 2.4 Calculate the witness using the input file and executable web assembly
 
 ```
-snarkjs wtns calculate circuit.wasm input.json witness.wtns
+npx snarkjs wtns calculate circuit.wasm input.json witness.wtns
 ```
 
 Calculate the witness (given the inputs a = 3 and b = 11).
@@ -164,7 +164,7 @@ Calculate the witness (given the inputs a = 3 and b = 11).
 ### 2.5 Recommended: debug the final witness calculation
 
 ```
-snarkjs wtns debug circuit.wasm input.json witness.wtns circuit.sym --trigger --get --set
+npx snarkjs wtns debug circuit.wasm input.json witness.wtns circuit.sym --trigger --get --set
 ```
 
 And check for any errors in the witness calculation process (best practice).
@@ -176,7 +176,7 @@ The wtns debug command logs every time a new component starts/ends (`--trigger`)
 #### 2.6.1 Export R1CS to JSON
 
 ```
-snarkjs r1cs export json circuit.r1cs circuit.r1cs.json
+npx snarkjs r1cs export json circuit.r1cs circuit.r1cs.json
 cat circuit.r1cs.json
 ```
 
@@ -185,7 +185,7 @@ We export r1cs to json format to make it human readable.
 #### 2.6.2 Circuit stats
 
 ```
-snarkjs r1cs info circuit.r1cs
+npx snarkjs r1cs info circuit.r1cs
 ```
 
 The info command is used to print circuit stats.
@@ -206,7 +206,7 @@ This information fits with our mental map of the circuit we created: we had two 
 #### 2.6.3 Constraints
 
 ```
-snarkjs r1cs print circuit.r1cs circuit.sym
+npx snarkjs r1cs print circuit.r1cs circuit.sym
 ```
 
 To double check, we print the R1CS constraints of the circuit.
@@ -234,7 +234,7 @@ Here is the proof-generation process, copied from the [snarkjs github](https://g
 ### Create the proof
 
 ```
-snarkjs groth16 prove circuit_final.zkey witness.wtns proof.json public.json
+npx snarkjs groth16 prove circuit_final.zkey witness.wtns proof.json public.json
 ```
 
 We create the proof. `groth16 prove` generates the files `proof.json` and `public.json`: `proof.json` contains the actual proof, whereas `public.json` contains the values of the public inputs and output.
@@ -245,7 +245,7 @@ We create the proof. `groth16 prove` generates the files `proof.json` and `publi
 ## Verify locally with the verification key
 
 ```
-snarkjs groth16 verify verification_key.json public.json proof.json
+npx snarkjs groth16 verify verification_key.json public.json proof.json
 ```
 
 We use the `groth16 verify` command to verify the proof, passing in the `verification_key` we exported earlier.
@@ -261,7 +261,7 @@ Again, much of this is quoted from [snarkjs github](https://github.com/iden3/sna
 ### Turn the verifier into a smart contract
 
 ```
-snarkjs zkey export solidityverifier circuit_final.zkey verifier.sol
+npx snarkjs zkey export solidityverifier circuit_final.zkey verifier.sol
 ```
 
 This exports a Solidity smart contract, `verifier.sol`, which you we will subsequently publish to the testchain.
@@ -313,7 +313,7 @@ In the next step, we will generate these arguments as JSON arrays.
 ### Generate arguments to the Verifier contract call
 
 ```
-snarkjs zkey export soliditycalldata public.json proof.json
+npx snarkjs zkey export soliditycalldata public.json proof.json
 ```
 
 We use `soliditycalldata` to simulate a verification call; **the terminal output contains the arguments to the Verifier contract** and may look different from run-to-run depending on your verification key. Examining the terminal output
